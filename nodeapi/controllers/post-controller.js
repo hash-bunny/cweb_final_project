@@ -25,7 +25,7 @@ export const createPost = async(user, title, postText) => {
  * @param postId the ID of the post you want to update
  * @returns the specified post
  */
-export const getPost = async (postId) => {
+export const getPostById = async (postId) => {
     try {
         const post = await Post.findByPk(postId);
         return post;

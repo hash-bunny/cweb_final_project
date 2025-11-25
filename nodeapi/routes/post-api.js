@@ -1,10 +1,19 @@
 import express from 'express';
 import {authorizeJWT} from "../middleware/auth-middleware";
-import {createPost} from "../controllers/post-controller";
+import {createPost, getPostById, getAllPosts} from "../controllers/post-controller";
 const router = express.Router();
 const apiPath = '/posts';
 
-// post POST method (haha)
+// post GET ALL path
+router.get(apiPath, async (req, res) => {
+    const result = await getAllPosts();
+    if (result?.posts?.length) return res.json(result);
+
+    return res.status(404).json({error: 'No posts found'});
+})
+
+
+// post POST path (haha)
 router.post(apiPath, authorizeJWT, async (req, res) => {
     if (req.error)
     {
