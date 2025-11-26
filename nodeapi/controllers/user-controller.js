@@ -52,12 +52,11 @@ export const getAllUsers = async() => {
 
 /**
  * update method for a user's username
- * @param username users old username
+ * @param user users old username
  * @param newUsername user's new username
  */
-export const updateUserUsername = async(username, newUsername) => {
+export const updateUserUsername = async(user, newUsername) => {
     try {
-        const user = await User.find({username: username});
         await user.update({ username: newUsername });
         await user.save();
     } catch (error) {
@@ -67,12 +66,11 @@ export const updateUserUsername = async(username, newUsername) => {
 
 /**
  * updates a users profile photo
- * @param username user's username
+ * @param user user's username
  * @param photoString string representing the filepath for the uploaded profile photo
  */
-export const updateUserPhoto = async(username, photoString) => {
+export const updateUserPhoto = async(user, photoString) => {
    try {
-       const user = await User.find({username: username});
        await user.update({ profilePhoto: photoString });
        await user.save();
    } catch (error) {
