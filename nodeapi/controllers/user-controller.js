@@ -3,6 +3,7 @@ import {User} from '../db.js'
 /**
  * user create method
  * @param username user's username
+ * @param email user's email
  * @param passHash user's hashed password (hashing is done in api)
  * @returns the created user object
  */
