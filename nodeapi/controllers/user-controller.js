@@ -25,10 +25,10 @@ export const createUser = async(username, email, passHash) => {
  * @param username user's username
  * @returns a single user by their username
  */
-export const getUserByUsername = async(username) => {
+export const getUserByUsernameAndEmail = async(username, email) => {
     try {
         const user = await User.findOne({
-                where: { username: username }
+                where: { username: username, email: email }
             });
         return user;
     } catch (error) {

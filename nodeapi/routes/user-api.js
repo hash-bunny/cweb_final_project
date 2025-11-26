@@ -1,4 +1,9 @@
+import express from "express";
+
+const router = express.Router();
 const bcrypt = require('bcrypt');
+const express = require("express");
+const apiPath = '/users';
 
 /**
  * salts and hashes a given password for storage in the database
@@ -13,12 +18,4 @@ async function hashPassword(password) {
     return hash;
 }
 
-/**
- * confirms the password matches the stored password hash
- * @param password the password we want to compare
- * @param passHash the password hash we want to compare
- * @returns returns a boolean depending on if the password and hash match
- */
-async function verifyPassword(password, passHash) {
-    return await bcrypt.compare(password, passHash);
-}
+export default router;
