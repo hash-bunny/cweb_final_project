@@ -21,7 +21,7 @@ router.post(apiPath, authorizeJWT, async (req, res) => {
 
 // comment GET ALL BY POST ID request
 router.get(`${apiPath}/:postId`, async (req, res) => {
-    const result = await getAllCommentsByPostId(req.params.postId);
+    const result = await getAllCommentsByPostId(parseInt(req.params.postId));
     if (result?.comments?.length) return res.status(200).json(result);
 })
 
