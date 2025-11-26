@@ -1,5 +1,11 @@
 import express from "express";
-import {createLike, deleteLike, getAllLikesByPostId, getLikeByUsernameAndPostId} from "../controllers/like-controller";
+import {
+    createLike,
+    deleteLike,
+    getAllLikesByPostId,
+    getLikeByUsernameAndPostId,
+    updateLike
+} from "../controllers/like-controller";
 import {authorizeJWT} from "../middleware/auth-middleware";
 const router = express.Router();
 const apiPath = '/likes';
@@ -16,6 +22,7 @@ router.post(apiPath, authorizeJWT, async (req, res) => {
     return res.status(400).json({error: like.message, errors: like.errors});
 })
 
+
 // like GET BY USERNAME AND POST ID request
 router.get(apiPath, async (req, res) => {
 
@@ -24,6 +31,7 @@ router.get(apiPath, async (req, res) => {
 
     return res.status(404).json({error: result.message, errors: result.errors});
 })
+
 
 // like GET ALL LIKES BY POST ID
 router.get(apiPath, async (req, res) => {
@@ -34,6 +42,18 @@ router.get(apiPath, async (req, res) => {
     return res.status(404).json({error: result.message, errors: result.errors});
 })
 
+
+// like PUT request
+router.put(apiPath, authorizeJWT, async (req, res) => {
+    if (req.error) {
+        return res.status(401).json({error: req.error});
+    }
+
+    const like = await updateLike(parseInt(req.params.id));
+    if (like.id) return res.status(204).json(like);
+
+    return res.status(400).json({error: like.message, errors: like.errors});
+})
 
 
 // like DELETE request
