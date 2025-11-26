@@ -80,9 +80,11 @@ export const updateLike = async (likeId) => {
  */
 export const deleteLike = async (likeId) => {
     try {
-        await Like.destroy({
+        const deletedRows = await Like.destroy({
             where: { likeId: likeId },
         });
+
+        return deletedRows > 0;
     } catch (error) {
         return error;
     }

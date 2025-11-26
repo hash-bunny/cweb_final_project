@@ -57,9 +57,11 @@ export const updateComment = async (commentId, commentText) => {
  */
 export const deleteComment = async (commentId) => {
     try {
-        await Comment.destroy({
+        const deletedRows = await Comment.destroy({
             where: { id: commentId }
-        })
+        });
+
+        return deletedRows > 0;
     } catch (error) {
         return error;
     }

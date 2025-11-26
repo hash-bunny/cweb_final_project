@@ -85,11 +85,11 @@ export const updateUserPhoto = async(username, photoString) => {
  */
 export const deleteUser = async(username) => {
     try {
-        await User.destroy({
-            where: {
-                username: username
-            },
+        const deletedRows = await User.destroy({
+            where: { username: username }
         });
+
+        return deletedRows > 0;
     } catch (error) {
         return error;
     }

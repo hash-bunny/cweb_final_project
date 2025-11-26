@@ -66,15 +66,15 @@ export const updatePost = async (postId, title, postText) => {
 /**
  * deletes a post by its ID
  * @param postId the ID of the post you want to delete
- * @returns {Promise<*>}
+ * @returns true if delete successful, false if not
  */
 export const deletePost = async (postId) => {
     try {
-        await Post.destroy({
-            where: {
-                id: postId
-            },
+        const deletedRows = await Post.destroy({
+            where: { id: postId }
         });
+
+        return deletedRows > 0;
     } catch (error) {
         return error;
     }
