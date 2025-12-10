@@ -1,9 +1,7 @@
 import React from 'react';
-import NavBar from '../Components/navbar-component';
-import PostList from '../Components/post-list-component';
-import ButtonComponent from '../Components/button-component';
+import PostList from '../Components/post-list-component.jsx';
 
-const HomePage = () => {
+const Homepage = () => {
     const containerStyle = {
         display: 'flex',
         flexDirection: 'column',
@@ -24,13 +22,21 @@ const HomePage = () => {
 
     return (
         <div style={containerStyle}>
-            <NavBar/>
             <PostList posts={mockPosts}/>
             <div style={buttonContainerStyle}>
-                <ButtonComponent label="Create Post" color="#007bff"/>
+                <button style={{
+                    backgroundColor: '#007bff',
+                    color: 'white',
+                    padding: '10px 20px',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer'
+                }}>
+                    Create Post
+                </button>
             </div>
         </div>
     );
 };
 
-export default HomePage;
+export default Homepage;

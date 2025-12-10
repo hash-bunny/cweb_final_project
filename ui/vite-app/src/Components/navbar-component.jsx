@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import ProfilePhoto from './profile-photo-component';
+import ProfilePhoto from './profile-photo-component.jsx';
 
 const NavBar = () => {
     const navStyle = {
@@ -9,7 +9,12 @@ const NavBar = () => {
         alignItems: 'center',
         padding: '1rem 2rem',
         backgroundColor: 'white',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        position: 'fixed',
+        width: '100%',
+        top: 0,
+        zIndex: 1000,
+        boxSizing: 'border-box'
     };
 
     const titleStyle = {

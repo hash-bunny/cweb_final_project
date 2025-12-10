@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import PostListItem from './post-list-item-component';
+import PostListItem from './post-list-item-component.jsx';
 
 const PostList = ({posts}) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -11,7 +11,7 @@ const PostList = ({posts}) => {
 
     const containerStyle = {
         padding: '1rem',
-        maxWidth: '800px',
+        width: '60%',
         margin: '0 auto'
     };
 

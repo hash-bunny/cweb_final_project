@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const CommentComponent = ({author, text}) => {
     const styles = {
@@ -32,9 +31,5 @@ const CommentComponent = ({author, text}) => {
     );
 };
 
-CommentComponent.propTypes = {
-    author: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
-};
 
 export default CommentComponent;

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import NavBar from '../Components/navbar-component';
-import './edit-account.css';
+import NavBar from '../Components/navbar-component.jsx';
 
 const EditAccount = () => {
     const [username, setUsername] = useState('');
@@ -22,7 +21,6 @@ const EditAccount = () => {
 
     return (
         <div className="edit-account-container">
-            <NavBar/>
             <div className="edit-account-content">
                 <h1>Edit Account</h1>
 

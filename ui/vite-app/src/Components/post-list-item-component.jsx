@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import ProfilePhoto from './profile-photo-component';
+import ProfilePhoto from './profile-photo-component.jsx';
 
 const PostListItem = ({title, imagePath, postId}) => {
     const containerStyle = {
