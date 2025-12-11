@@ -1,6 +1,6 @@
 import express from 'express';
-import {authorizeJWT} from "../middleware/auth-middleware";
-import {createComment, deleteComment, getAllCommentsByPostId, updateComment} from "../controllers/comment-controller";
+import {authorizeJWT} from "../middleware/auth-middleware.js";
+import {createComment, deleteComment, getAllCommentsByPostId, updateComment} from "../controllers/comment-controller.js";
 const router = express.Router();
 const apiPath = '/comments';
 

@@ -1,5 +1,5 @@
 import { Like } from '../db.js'
-import {getUserByUsername} from "./user-controller";
+import {getUserByUsernameAndEmail} from "./user-controller.js";
 
 /**
  * creates a like on a specified post
@@ -30,7 +30,7 @@ export const createLike = async (user, Post) => {
  */
 export const getLikeByUsernameAndPostId = async (username, postId) => {
     try {
-        const user = await getUserByUsername(username);
+        const user = await getUserByUsernameAndEmail(username);
         const like = await Like.findOne({
             where: {
                 userId: user.id,

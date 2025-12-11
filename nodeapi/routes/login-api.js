@@ -1,8 +1,8 @@
 import express from "express";
-import {getUserByUsernameAndEmail} from "../controllers/user-controller";
-import {generateJWT} from "../middleware/auth-middleware";
+import bcrypt from 'bcrypt';
+import {getUserByUsernameAndEmail} from "../controllers/user-controller.js";
+import {generateJWT} from "../middleware/auth-middleware.js";
 const router = express.Router();
-const bcrypt = require('bcrypt');
 const apiPath = '/login';
 
 // login POST request

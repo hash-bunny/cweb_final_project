@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import {getUserByUsername} from "../controllers/user-controller";
+import {getUserByUsernameAndEmail} from "../controllers/user-controller.js";
 
 const JWT_SECRET_KEY = "e8371e6a66d45eecc6b4596085b1b731edaf37d0c27c9820ce4c37c06972f66e4f85ef0d6184ed502374f64bc556f5ae6e3d8fa2ae028220955bac9853c22728";
 
@@ -28,7 +28,7 @@ export const authorizeJWT = (req, res, next) => {
                 req.error = error;
                 return next();
             }
-            const user = getUserByUsername(payload.user.username);
+            const user = getUserByUsernameAndEmail(payload.user.username);
             if (!user) {
                 const error = new Error("No user found");
                 req.status = 404;

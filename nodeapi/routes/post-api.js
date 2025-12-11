@@ -1,6 +1,6 @@
 import express from 'express';
-import {authorizeJWT} from "../middleware/auth-middleware";
-import {createPost, getPostById, getAllPosts, updatePost, deletePost} from "../controllers/post-controller";
+import {authorizeJWT} from "../middleware/auth-middleware.js";
+import {createPost, getPostById, getAllPosts, updatePost, deletePost} from "../controllers/post-controller.js";
 const router = express.Router();
 const apiPath = '/posts';
 

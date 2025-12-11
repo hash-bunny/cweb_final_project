@@ -1,5 +1,5 @@
-const express = require('express');
-const { Sequelize } = require('sequelize');
+import express from 'express';
+import { Sequelize } from 'sequelize';
 import cors from 'cors';
 import {db} from "./db.js";
 import userRoutes from './routes/user-api.js';

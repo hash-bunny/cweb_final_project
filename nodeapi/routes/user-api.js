@@ -1,9 +1,8 @@
 import express from "express";
-import {createUser, deleteUser, getAllUsers, updateUserUsername} from "../controllers/user-controller";
-import {authorizeJWT} from "../middleware/auth-middleware";
+import bcrypt from 'bcrypt';
+import {createUser, deleteUser, getAllUsers, updateUserUsername} from "../controllers/user-controller.js";
+import {authorizeJWT} from "../middleware/auth-middleware.js";
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const express = require("express");
 const apiPath = '/users';
 
 

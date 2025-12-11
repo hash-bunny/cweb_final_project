@@ -1,6 +1,6 @@
 import express from "express";
-import {createLike, deleteLike, getAllLikesByPostId, getLikeByUsernameAndPostId, updateLike} from "../controllers/like-controller";
-import {authorizeJWT} from "../middleware/auth-middleware";
+import {createLike, deleteLike, getAllLikesByPostId, getLikeByUsernameAndPostId, updateLike} from "../controllers/like-controller.js";
+import {authorizeJWT} from "../middleware/auth-middleware.js";
 const router = express.Router();
 const apiPath = '/likes';
 
